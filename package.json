@@ -1,0 +1,23 @@
+{
+  "name": "nodewebapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getmahen/NodeWebApi.git"
+  },
+  "author": "Mahendra R",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/getmahen/NodeWebApi/issues"
+  },
+  "homepage": "https://github.com/getmahen/NodeWebApi#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  }
+}
