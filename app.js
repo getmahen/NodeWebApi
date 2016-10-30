@@ -1,7 +1,17 @@
 //Entry point into the App
 
 var express = require('express');
-var bodyParser = require('body-parser');
+var bodyParser = require('body-parser');//FOR PARSING REQUEST body
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/customers', function(error, db){
+    if(error){
+
+    }
+    else{
+        
+    }
+});
+
 var port = process.env.PORT || '5000';
 
 var app = new express();
