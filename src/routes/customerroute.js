@@ -25,7 +25,7 @@ var customerRouter = function(express){
     router.route('/customer')
         .post(function(request, response){
             customerController.add(request, response);
-            response.send({info: 'Customer created successfully'});
+            //response.send({info: 'Customer created successfully'});
         });
 
     return router;

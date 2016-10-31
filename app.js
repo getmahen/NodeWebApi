@@ -2,13 +2,14 @@
 
 var express = require('express');
 var bodyParser = require('body-parser');//FOR PARSING REQUEST body
+
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/customers', function(error, db){
     if(error){
 
     }
     else{
-        
+
     }
 });
 

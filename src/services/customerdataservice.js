@@ -22,14 +22,14 @@ var CustomerDataService = function(){
 
     this.CustomerData = fakeCustomers;
 
-    this.Save = function(customer){
-        var newCustomer = new Customer(customer);
+    this.Save = function(request, response){
+        var newCustomer = new Customer(request.body);
         newCustomer.save(function(err){
             if(err){
-
+                response.send({info: 'Customer created Failed!!'});
             }
             else{
-
+                response.send({info: 'Customer created successfully'});
             }
         });
     };
@@ -37,10 +37,13 @@ var CustomerDataService = function(){
     this.GetAll = function(request, response){
         Customer.find({},function(error, customers){
             if(error){
-
+                response.send({info: 'GetAll Customers Failed!!'});
             }
             else{
-                return response.json(customers);
+                if(customers){
+                    return response.json(customers);
+                }
+                return response.json({info:'Not found'});
             }
         });
     };
@@ -50,10 +53,13 @@ var CustomerDataService = function(){
 
         Customer.findOne({_id: id},function(error, customer){
             if(error){
-
+                response.send({info: 'GetCustomerById Failed!!'});
             }
             else{
-                return response.json(customer);
+                if(customer){
+                    return response.json(customer);
+                }
+                return response.json({info:'Not found'});
             }
         });
     };

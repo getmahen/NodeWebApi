@@ -6,7 +6,7 @@ var CustomerController = function(){
     var service = new CustomerDataService();
 
     var getAllCustomers = function(request, response){
-        //return service.CustomerData;
+        //return service.CustomerData; //THIS IS A MOCK DATA ARRAY
         return service.GetAll(request, response);
 
     };
@@ -20,7 +20,7 @@ var CustomerController = function(){
     };
 
     var addCustomer = function(request, response){
-        service.Save(customer);
+        service.Save(request, response);
     };
 
     return (
